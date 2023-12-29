@@ -1,13 +1,23 @@
-let titleProject = 'Оценка стоимости';
-let screensValue = 'шаблонные, с уникальным дизайном, с анимациями';
-let screenPrice = 5000;
-let percentage = 5;
-let fullPrice = 100000;
-let responsive = true;
+// let x = 11;
+// if (x > 10) {
+//     console.log('Условие верно');
+// } else {
+//     console.log('Условие неверно');
+// }
 
-console.log(titleProject);
-console.log(screensValue);
-console.log(screenPrice);
-console.log(percentage);
-console.log(fullPrice);
-console.log(responsive);
+// let a = 5;
+// let b = '10';
+// let res = a + -b
+
+// console.log(a.toString());
+
+// console.log(res);
+
+// console.log(a + b);
+
+let age = prompt('Укажите ваш возраст')
+let a = 10
+let res = +age + a
+document.write(res)
+
+
