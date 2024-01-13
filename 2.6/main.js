@@ -65,6 +65,8 @@ function getTitle() {
 const getPersentageMessage = function (price) {
     if (price > 50000) {
         return 'Сделаем скидку 10%'
+    } else if (price > 40000 && price < 50000) {
+        return 'Сделаем скидку 7%'
     } else if (price > 20000 && price < 40000) {
         return 'Сделаем скидку 5%'
     } else if (price < 20000 && price > 0) {
