@@ -1,33 +1,45 @@
-let screenPrice = 5000;
-let percentage = 10;
-let titleProject = prompt('Название проекта?')
-let screensValue = prompt('шаблонные, с уникальным дизайном, с анимациями')
-let responsive = prompt('нужен ли респонсивный сайт?')
+let screenPrice = 5000
+let percentage = 10
+let allServicePrices;
+let newTitle = "";
+let titleProject;
+let screensValue;
+let responsive;
 
-let service1 = prompt('Какой сервис нужен?')
+
+
+const asking = function () {
+    titleProject = prompt('Название проекта?')
+    screensValue = prompt('шаблонные, с уникальным дизайном, с анимациями')
+    responsive = prompt('нужен ли респонсивный сайт?')
+}
+asking()
+
+
+
+let service1 = prompt('Какой дополнительный тип услуги нужен?')
 let servicePrice1 = +prompt('Сколько это будет стоить?')
-let service2 = prompt('Какой еще сервис тебе нужен?')
-let servicePrice2 = +prompt('Сколько будет стоить этот второй сервис?')
+let service2 = prompt('Какой дополнительный тип услуги нужен?')
+let servicePrice2 = +prompt('Сколько это будет стоить?')
+
 
 
 let getAllServicePrices = function () {
     return servicePrice1 + servicePrice2
 }
-let allServicePrices = getAllServicePrices()
 
 function getFullPrice() {
     return screenPrice + allServicePrices
-}
-let fullPrice = getFullPrice()
-
-function getTitle() {
-    return titleProject = titleProject.replace(titleProject[0], titleProject[0].toUpperCase())
 }
 
 function getServicePercentPrices() {
     return fullPrice - (fullPrice / 100 * percentage)
 }
-let servicePercentPrice = getServicePercentPrices()
+
+function getTitle() {
+    return titleProject.replace(titleProject[0], titleProject[0].toUpperCase())
+}
+
 
 
 function getRollbackMessage() {
@@ -43,13 +55,35 @@ function getRollbackMessage() {
         console.log('Равенство');
     }
 }
+
+
+
+allServicePrices = getAllServicePrices()
+fullPrice = getFullPrice()
+servicePercentPrice = getServicePercentPrices()
+newTitle = getTitle()
 getRollbackMessage()
 
+console.log(titleProject)
+console.log(screensValue)
+console.log(responsive)
+console.log(Math.ceil(servicePercentPrice))
+console.log(service1)
+console.log(servicePrice1)
+console.log(service2)
+console.log(servicePrice2)
 
-document.write(`<p>
-                    Название проекта: ${getTitle()},<br> 
-                    Стоимость дополнительных услуг: ${allServicePrices},<br> 
-                    Полная стоимость проекта: ${fullPrice},<br>
-                    Стоимость сайта за вычетом процента подрядчику: ${Math.round(servicePercentPrice)}
-                </p>`)
+
+
+
+
+
+
+
+// document.write(`<p>
+//                     Название проекта: ${getTitle()},<br>
+//                     Стоимость дополнительных услуг: ${allServicePrices},<br>
+//                     Полная стоимость проекта: ${fullPrice},<br>
+//                     Стоимость сайта за вычетом процента подрядчику: ${Math.round(servicePercentPrice)}
+//                 </p>`)
 
